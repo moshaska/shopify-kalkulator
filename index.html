@@ -200,9 +200,11 @@ function renderGrid() {
       <div class="rec-badge">Anbefalt</div>
       <div class="plan-name">${p.name}</div>
       <div class="plan-price">${fmt(Math.round((currentAnnual?p.usdY:p.usdM)*NOK))}/mnd lisens</div>
+      ${hasTx ? `<div class="plan-price" style="color:#a09e99">+ ${fmt(c.tx)} Shopify-gebyr på Vipps-andelen</div>` : ''}
+      <div style="height:1px;background:#222;margin:.5rem 0"></div>
       <div class="plan-total">${fmt(c.total)}</div>
       <div class="plan-total-yr">${fmt(c.total*12)}/år</div>
-      <div class="plan-tx${hasTx?' has-tx':''}">${hasTx ? 'inkl. '+fmt(c.tx)+' Shopify-gebyr på Vipps-andelen' : 'Ingen ekstragebyr fra Shopify'}</div>
+      <div class="plan-tx${hasTx?' has-tx':''}">${hasTx ? 'Totalt inkl. gebyr' : 'Ingen ekstragebyr fra Shopify'}</div>
     </div>`;
   }).join('');
 }
