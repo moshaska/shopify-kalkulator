@@ -123,7 +123,7 @@ input#ext-pct::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18
   </div>
 
   <div style="background:#0f0f0f;border:0.5px solid #2e2e2e;border-radius:6px;padding:.85rem 1rem;font-size:12px;color:#6b6963;line-height:1.6;margin-bottom:2rem">
-    <span style="color:#e8392a;font-weight:500">Merk: </span>Shopify tar tx-gebyr på Vipps-andelen uavhengig av om Shopify Payments er aktivert. Unntaket er <strong style="color:#a09e99">Shopify Plus</strong> – der kan tx-gebyret frafalle for alle betalingsmetoder inkl. Vipps når Shopify Payments er aktivert (avhenger av region, avklar med Shopify Support). PayPal er unntatt fra tx-gebyr når Shopify Payments er aktivert på alle planer.
+    <span style="color:#e8392a;font-weight:500">Merk: </span>Shopify tar et ekstragebyr på omsetningen som går via Vipps og andre eksterne betalingsløsninger – uavhengig av om Shopify Payments er aktivert. Unntaket er <strong style="color:#a09e99">Shopify Plus</strong> – der kan gebyret frafalle for alle betalingsmetoder inkl. Vipps når Shopify Payments er aktivert (avhenger av region, avklar med Shopify Support). PayPal er unntatt fra ekstragebyr når Shopify Payments er aktivert på alle planer.
   </div>
 
   <button class="btn-calc" onclick="calculate()">Beregn kostnad</button>
@@ -202,7 +202,7 @@ function renderGrid() {
       <div class="plan-price">${fmt(Math.round((currentAnnual?p.usdY:p.usdM)*NOK))}/mnd lisens</div>
       <div class="plan-total">${fmt(c.total)}</div>
       <div class="plan-total-yr">${fmt(c.total*12)}/år</div>
-      <div class="plan-tx${hasTx?' has-tx':''}">${hasTx ? 'inkl. '+fmt(c.tx)+' tx-gebyr' : 'Ingen tx-gebyr til Shopify'}</div>
+      <div class="plan-tx${hasTx?' has-tx':''}">${hasTx ? 'inkl. '+fmt(c.tx)+' Shopify-gebyr på Vipps-andelen' : 'Ingen ekstragebyr fra Shopify'}</div>
     </div>`;
   }).join('');
 }
@@ -238,7 +238,7 @@ function renderDetail() {
   document.getElementById('detail-box').innerHTML = `
     <div class="detail-row"><span class="detail-label">Lisens (${currentAnnual?'årlig fakturering':'månedlig fakturering'})</span><span class="detail-val">${fmt(c.lisens)}</span></div>
     <div class="detail-row">
-      <span class="detail-label">Tx-gebyr til Shopify (${(p.txExt*100).toFixed(1)}% av ${extPctDisplay}% ekstern betaling)</span>
+      <span class="detail-label">Shopify-gebyr for ekstern betaling (${(p.txExt*100).toFixed(1)}% av ${extPctDisplay}% via Vipps/andre)</span>
       <span class="detail-val${c.tx>0?' warn':''}">${c.tx > 0 ? fmt(c.tx) : 'Ingen'}</span>
     </div>
     ${extPctDisplay > 0 ? `<div class="detail-row"><span class="detail-label">Ekstern omsetning som gebyrberegnes</span><span class="detail-val">${fmt(extRev)}</span></div>` : ''}
