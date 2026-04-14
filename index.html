@@ -12,70 +12,56 @@ body{font-family:'Inter',sans-serif;background:#0f0f0f;color:#f0eeea;min-height:
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#e8392a;margin-bottom:.75rem}
 h1{font-size:32px;font-weight:600;line-height:1.2;margin-bottom:.5rem;color:#f0eeea}
 .lead{font-size:15px;color:#c8c6c0;margin-bottom:2.5rem;max-width:560px;line-height:1.6}
-
 .section{margin-bottom:2rem}
 .section-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#5f5e5a;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:0.5px solid #222}
 .field{margin-bottom:1.5rem}
 .field:last-child{margin-bottom:0}
 .field label{display:block;font-size:14px;font-weight:500;color:#f0eeea;margin-bottom:.35rem}
-.field .sub{font-size:12px;color:#6b6963;margin-bottom:.6rem;line-height:1.5}
-
-.range-row{display:flex;align-items:center;gap:14px}
-.range-row input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:3px;background:#2a2a2a;border-radius:2px;outline:none}
-.range-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#e8392a;cursor:pointer;border:2px solid #0f0f0f;box-shadow:0 0 0 1px #e8392a}
-.range-val{font-size:14px;font-weight:500;min-width:120px;text-align:right;color:#f0eeea}
-
-.split-track-labels{display:flex;justify-content:space-between;font-size:11px;color:#5f5e5a;margin-bottom:6px}
-input#ext-pct{width:100%;-webkit-appearance:none;appearance:none;height:3px;background:#2a2a2a;border-radius:2px;outline:none;display:block;margin:8px 0;cursor:pointer}
-input#ext-pct::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#e8392a;cursor:pointer;border:2px solid #0f0f0f;box-shadow:0 0 0 1px #e8392a}
-.split-result{display:flex;justify-content:space-between;margin-top:4px}
-
+.field .sub{font-size:12px;color:#a09e99;margin-bottom:.6rem;line-height:1.5}
+.input-row{display:flex;align-items:center;gap:10px}
+.input-row input[type=number]{flex:1;background:#161616;border:0.5px solid #2e2e2e;border-radius:6px;padding:10px 14px;font-size:15px;font-weight:500;color:#f0eeea;outline:none;font-family:'Inter',sans-serif;-moz-appearance:textfield}
+.input-row input[type=number]::-webkit-inner-spin-button,
+.input-row input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none}
+.input-row input[type=number]:focus{border-color:#e8392a}
+.input-unit{font-size:14px;color:#a09e99;white-space:nowrap}
+.input-error{font-size:11px;color:#e8392a;margin-top:4px;display:none}
 .opts{display:flex;flex-wrap:wrap;gap:8px}
-.opt{padding:7px 16px;border:0.5px solid #2e2e2e;border-radius:6px;font-size:13px;cursor:pointer;background:#161616;color:#6b6963;transition:all .15s;user-select:none}
+.opt{padding:7px 16px;border:0.5px solid #2e2e2e;border-radius:6px;font-size:13px;cursor:pointer;background:#161616;color:#a09e99;transition:all .15s;user-select:none}
 .opt:hover{border-color:#444;color:#f0eeea}
 .opt.sel{background:#1c1010;border-color:#e8392a;color:#f0eeea;font-weight:500}
-
 .btn-calc{display:block;width:100%;padding:14px;background:#e8392a;border:none;border-radius:6px;font-size:15px;font-weight:600;color:#fff;cursor:pointer;margin-top:.5rem;letter-spacing:.02em;transition:opacity .15s}
 .btn-calc:hover{opacity:.88}
-
 .result{display:none;margin-top:2.5rem}
 .result.show{display:block}
-
 .plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:2rem}
 @media(max-width:640px){.plan-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:360px){.plan-grid{grid-template-columns:1fr}}
-
-.pcard{border-radius:8px;border:0.5px solid #222;padding:1.25rem;background:#161616;cursor:pointer;transition:border-color .15s;position:relative}
+.pcard{border-radius:8px;border:0.5px solid #222;padding:1.25rem;background:#161616;cursor:pointer;transition:border-color .15s}
 .pcard:hover{border-color:#444}
 .pcard.active{border-color:#e8392a;background:#1c1010}
-.pcard.recommended .rec-badge{display:inline-block}
-.rec-badge{display:none;font-size:10px;padding:2px 8px;border-radius:4px;background:#e8392a;color:#fff;font-weight:500;margin-bottom:.6rem}
 .plan-name{font-size:15px;font-weight:600;color:#f0eeea;margin-bottom:.25rem}
-.plan-price{font-size:12px;color:#6b6963;margin-bottom:.85rem}
+.plan-lisens{font-size:12px;color:#a09e99;margin-bottom:.4rem}
+.plan-gebyr{font-size:12px;color:#a09e99;margin-bottom:.6rem;min-height:16px}
+.plan-gebyr.has-tx{color:#e8392a}
+.plan-divider{height:1px;background:#222;margin:.5rem 0}
 .plan-total{font-size:22px;font-weight:600;color:#f0eeea}
-.plan-total-yr{font-size:11px;color:#5f5e5a;margin-top:2px}
-.plan-tx{font-size:11px;margin-top:.6rem;padding-top:.6rem;border-top:0.5px solid #222;color:#6b6963}
-.plan-tx.has-tx{color:#e8392a}
-
+.plan-total-yr{font-size:11px;color:#888780;margin-top:2px}
+.plan-tx-note{font-size:11px;margin-top:.6rem;padding-top:.6rem;border-top:0.5px solid #2a2a2a;color:#a09e99}
+.plan-tx-note.has-tx{color:#e8392a}
 .detail-box{background:#161616;border-radius:8px;border:0.5px solid #222;padding:1.5rem;margin-bottom:1.5rem}
-.detail-title{font-size:13px;font-weight:500;color:#f0eeea;margin-bottom:1rem}
 .detail-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:0.5px solid #1e1e1e;font-size:13px}
 .detail-row:last-of-type{border-bottom:none}
-.detail-label{color:#6b6963}
+.detail-label{color:#a09e99}
 .detail-val{font-weight:500;color:#f0eeea}
 .detail-val.warn{color:#e8392a}
 .detail-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:1rem;padding-top:1rem;border-top:0.5px solid #333;font-size:15px;font-weight:600;color:#f0eeea}
-
-.upgrade-note{background:#1a1410;border:0.5px solid #3a2010;border-radius:6px;padding:.75rem 1rem;font-size:12px;color:#c8854a;line-height:1.6;margin-top:1rem}
-.upgrade-note strong{color:#e8a060;font-weight:500}
 .plus-note{background:#100f1a;border:0.5px solid #2a2040;border-radius:6px;padding:.75rem 1rem;font-size:12px;color:#9090d0;line-height:1.6;margin-top:1rem}
 .plus-note strong{color:#b0b0e8;font-weight:500}
-
 .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:1rem}
 @media(max-width:500px){.features-grid{grid-template-columns:1fr}}
-.feature{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#6b6963;line-height:1.5}
+.feature{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#a09e99;line-height:1.5}
 .feature::before{content:"→";color:#e8392a;flex-shrink:0;font-size:11px;margin-top:1px}
-
+.info-note{background:#0f0f0f;border:0.5px solid #2e2e2e;border-radius:6px;padding:.85rem 1rem;font-size:12px;color:#a09e99;line-height:1.6;margin-bottom:2rem}
 .cta-box{background:#161616;border:0.5px solid #2e2e2e;border-radius:8px;padding:1.5rem;text-align:center;margin-top:2rem}
 .cta-box p{font-size:14px;color:#a09e99;margin-bottom:1rem;line-height:1.6}
 .cta-btn{display:inline-block;padding:12px 28px;background:#e8392a;color:#fff;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.02em;transition:opacity .15s}
@@ -93,10 +79,11 @@ input#ext-pct::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18
     <div class="section-label">Omsetning</div>
     <div class="field">
       <label>Månedlig omsetning</label>
-      <div class="range-row">
-        <input type="range" id="rev" min="50000" max="50000000" step="50000" value="500000">
-        <span class="range-val" id="rev-out">500 000 kr</span>
+      <div class="input-row">
+        <input type="number" id="rev" min="0" step="1000" value="500000" placeholder="500000">
+        <span class="input-unit">kr / mnd</span>
       </div>
+      <div class="input-error" id="rev-error">Legg inn et gyldig beløp</div>
     </div>
     <div class="field">
       <label>Faktureringsperiode</label>
@@ -113,17 +100,16 @@ input#ext-pct::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18
     <div class="field">
       <label>Andel ekstern betaling (f.eks. Vipps)</label>
       <div class="sub">Shopify Payments er integrert og gir ingen ekstragebyr. Vipps og andre eksterne løsninger utløser et tilleggsgebyr fra Shopify på den andelen av omsetningen.</div>
-      <div class="split-track-labels"><span>0% ekstern</span><span>100% ekstern</span></div>
-      <input type="range" id="ext-pct" min="0" max="100" step="1" value="0">
-      <div class="split-result">
-        <span style="font-size:13px;font-weight:500;color:#f0eeea" id="native-lbl">100% Shopify Payments</span>
-        <span style="font-size:13px;font-weight:500;color:#5f5e5a" id="ext-lbl">0% ekstern</span>
+      <div class="input-row">
+        <input type="number" id="ext-pct" min="0" max="100" step="1" value="0" placeholder="0">
+        <span class="input-unit">% ekstern (0–100)</span>
       </div>
+      <div class="input-error" id="ext-error">Må være mellom 0 og 100</div>
     </div>
   </div>
 
-  <div style="background:#0f0f0f;border:0.5px solid #2e2e2e;border-radius:6px;padding:.85rem 1rem;font-size:12px;color:#6b6963;line-height:1.6;margin-bottom:2rem">
-    <span style="color:#e8392a;font-weight:500">Merk: </span>Shopify tar et ekstragebyr på omsetningen som går via Vipps og andre eksterne betalingsløsninger – uavhengig av om Shopify Payments er aktivert. Unntaket er <strong style="color:#a09e99">Shopify Plus</strong> – der kan gebyret frafalle for alle betalingsmetoder inkl. Vipps når Shopify Payments er aktivert (avhenger av region, avklar med Shopify Support). PayPal er unntatt fra ekstragebyr når Shopify Payments er aktivert på alle planer.
+  <div class="info-note">
+    <span style="color:#e8392a;font-weight:500">Merk: </span>Shopify tar et ekstragebyr på omsetningen som går via Vipps og andre eksterne betalingsløsninger – uavhengig av om Shopify Payments er aktivert. Unntaket er <strong style="color:#c8c6c0">Shopify Plus</strong> – der kan gebyret frafalle for alle betalingsmetoder inkl. Vipps når Shopify Payments er aktivert (avhenger av region, avklar med Shopify Support). PayPal er unntatt fra ekstragebyr når Shopify Payments er aktivert på alle planer.
   </div>
 
   <button class="btn-calc" onclick="calculate()">Beregn kostnad</button>
@@ -131,15 +117,12 @@ input#ext-pct::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18
   <div class="result" id="result">
     <div class="section-label" style="margin-top:2.5rem;margin-bottom:1rem">Sammenlign planer</div>
     <div class="plan-grid" id="plan-grid"></div>
-
     <div class="section-label" style="margin-bottom:1rem">Detaljert kostnad – <span id="active-plan-name">Basic</span></div>
     <div class="detail-box" id="detail-box"></div>
-
     <div class="cta-box">
       <p>Usikker på hvilken plan som passer for deg? Vi hjelper deg å finne riktig oppsett – og sørger for at du ikke betaler mer enn nødvendig.</p>
       <a class="cta-btn" href="https://maksimer.no/kontakt-oss/">Snakk med oss om Shopify</a>
     </div>
-
     <p class="disclaimer">Shopify-priser i USD omregnet til NOK (kurs 10,80). Ekstragebyr fra Vipps, Klarna, Nets og kortselskaper kommer i tillegg. Maksimer AS er en uavhengig Shopify-partner og ikke tilknyttet Shopify Inc.</p>
   </div>
 </div>
@@ -147,13 +130,13 @@ input#ext-pct::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18
 <script>
 const NOK = 10.80;
 const plans = [
-  { key:'basic',    name:'Basic',    usdM:39,   usdY:29,   txExt:0.020, revMin:0,        revMax:1500000,
+  { key:'basic',    name:'Basic',    usdM:39,   usdY:29,   txExt:0.020,
     features:['Ubegrenset produkter','2 adminkontoer','Grunnleggende rapporter','Shopify POS Lite','Opptil 3 markeder'] },
-  { key:'grow',     name:'Grow',     usdM:105,  usdY:79,   txExt:0.010, revMin:1500000,  revMax:7000000,
+  { key:'grow',     name:'Grow',     usdM:105,  usdY:79,   txExt:0.010,
     features:['5 adminkontoer','Profesjonelle rapporter','Gavekort','Opptil 3 markeder','Lavere kortgebyr'] },
-  { key:'advanced', name:'Advanced', usdM:399,  usdY:299,  txExt:0.006, revMin:7000000,  revMax:25000000,
+  { key:'advanced', name:'Advanced', usdM:399,  usdY:299,  txExt:0.006,
     features:['15 adminkontoer','Avanserte rapporter','Egendefinert prissetting','Opptil 3 markeder','Laveste kortgebyr'] },
-  { key:'plus',     name:'Plus',     usdM:2300, usdY:2300, txExt:0.002, revMin:25000000, revMax:999999999,
+  { key:'plus',     name:'Plus',     usdM:2300, usdY:2300, txExt:0.002,
     features:['Tilpasset checkout','Native B2B-portal','Shopify Flow avansert','Opptil 10 butikker','Dedikert support'] },
 ];
 
@@ -161,25 +144,12 @@ let currentRev = 500000;
 let currentAnnual = false;
 let currentExtPct = 0;
 let activeIdx = 0;
-let recIdx = 0;
 
 document.getElementById('billing').addEventListener('click', function(e) {
   const t = e.target.closest('.opt');
   if (!t) return;
   this.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
   t.classList.add('sel');
-});
-document.getElementById('rev').addEventListener('input', function() {
-  currentRev = parseInt(this.value);
-  document.getElementById('rev-out').textContent = currentRev.toLocaleString('nb-NO') + ' kr';
-});
-document.getElementById('ext-pct').addEventListener('input', function() {
-  currentExtPct = parseInt(this.value) / 100;
-  const v = Math.round(currentExtPct * 100);
-  document.getElementById('native-lbl').textContent = (100-v) + '% Shopify Payments';
-  document.getElementById('native-lbl').style.color = v===100 ? '#5f5e5a' : '#f0eeea';
-  document.getElementById('ext-lbl').textContent = v + '% ekstern';
-  document.getElementById('ext-lbl').style.color = v > 0 ? '#e8392a' : '#5f5e5a';
 });
 
 function fmt(n) { return Math.round(n).toLocaleString('nb-NO') + ' kr'; }
@@ -190,21 +160,17 @@ function calcPlan(p, rev, annual, extPct) {
 }
 
 function renderGrid() {
-  const grid = document.getElementById('plan-grid');
-  grid.innerHTML = plans.map((p, i) => {
+  document.getElementById('plan-grid').innerHTML = plans.map((p, i) => {
     const c = calcPlan(p, currentRev, currentAnnual, currentExtPct);
-    const isActive = i === activeIdx;
-    const isRec = i === recIdx;
     const hasTx = c.tx > 0;
-    return `<div class="pcard${isActive?' active':''}${isRec?' recommended':''}" onclick="selectPlan(${i})">
-      <div class="rec-badge">Anbefalt</div>
+    return `<div class="pcard${i===activeIdx?' active':''}" onclick="selectPlan(${i})">
       <div class="plan-name">${p.name}</div>
-      <div class="plan-price">${fmt(Math.round((currentAnnual?p.usdY:p.usdM)*NOK))}/mnd lisens</div>
-      ${hasTx ? `<div class="plan-price" style="color:#a09e99">+ ${fmt(c.tx)} Shopify-gebyr på Vipps-andelen</div>` : ''}
-      <div style="height:1px;background:#222;margin:.5rem 0"></div>
+      <div class="plan-lisens">${fmt(c.lisens)}/mnd lisens</div>
+      <div class="plan-gebyr${hasTx?' has-tx':''}">${hasTx ? '+ '+fmt(c.tx)+' Shopify-gebyr' : ''}&nbsp;</div>
+      <div class="plan-divider"></div>
       <div class="plan-total">${fmt(c.total)}</div>
       <div class="plan-total-yr">${fmt(c.total*12)}/år</div>
-      <div class="plan-tx${hasTx?' has-tx':''}">${hasTx ? 'Totalt inkl. gebyr' : 'Ingen ekstragebyr fra Shopify'}</div>
+      <div class="plan-tx-note${hasTx?' has-tx':''}">${hasTx ? 'Totalt inkl. gebyr' : 'Ingen ekstragebyr fra Shopify'}</div>
     </div>`;
   }).join('');
 }
@@ -214,31 +180,13 @@ function renderDetail() {
   const c = calcPlan(p, currentRev, currentAnnual, currentExtPct);
   const extRev = Math.round(currentRev * currentExtPct);
   const extPctDisplay = Math.round(currentExtPct * 100);
-
-  let upgradeHtml = '';
-  if (activeIdx !== recIdx) {
-    upgradeHtml = `<div class="upgrade-note">★ Anbefalt plan for dette omsetningsnivået er <strong>${plans[recIdx].name}</strong>.</div>`;
-  }
+  let extra = '';
   if (p.key === 'plus') {
-    upgradeHtml += `<div class="plus-note"><strong>Plus er mer enn omsetning.</strong> Vurder Plus når du trenger tilpasset checkout, native B2B-portal, avansert Flow-automatisering eller flere butikker under én konto.</div>`;
+    extra = `<div class="plus-note"><strong>Plus er mer enn omsetning.</strong> Vurder Plus når du trenger tilpasset checkout, native B2B-portal, avansert Flow-automatisering eller flere butikker under én konto.</div>`;
   }
-  // Breakeven til neste plan ved ekstern betaling
-  if (currentExtPct > 0 && activeIdx < plans.length - 1 && activeIdx === recIdx) {
-    const next = plans[activeIdx + 1];
-    const curLisens  = Math.round((currentAnnual?p.usdY:p.usdM)*NOK);
-    const nextLisens = Math.round((currentAnnual?next.usdY:next.usdM)*NOK);
-    const diff = p.txExt - next.txExt;
-    if (diff > 0) {
-      const be = Math.ceil((nextLisens - curLisens) / (diff * currentExtPct));
-      if (be > currentRev && be < 50000000) {
-        upgradeHtml += `<div class="upgrade-note">Oppgrader til <strong>${next.name}</strong> når månedlig omsetning passerer <strong>${be.toLocaleString('nb-NO')} kr</strong> – da er lavere tx-gebyr lønnsomt.</div>`;
-      }
-    }
-  }
-
   document.getElementById('active-plan-name').textContent = p.name;
   document.getElementById('detail-box').innerHTML = `
-    <div class="detail-row"><span class="detail-label">Lisens (${currentAnnual?'årlig fakturering':'månedlig fakturering'})</span><span class="detail-val">${fmt(c.lisens)}</span></div>
+    <div class="detail-row"><span class="detail-label">Lisens (${currentAnnual?'årlig':'månedlig'} fakturering)</span><span class="detail-val">${fmt(c.lisens)}</span></div>
     <div class="detail-row">
       <span class="detail-label">Shopify-gebyr for ekstern betaling (${(p.txExt*100).toFixed(1)}% av ${extPctDisplay}% via Vipps/andre)</span>
       <span class="detail-val${c.tx>0?' warn':''}">${c.tx > 0 ? fmt(c.tx) : 'Ingen'}</span>
@@ -246,7 +194,7 @@ function renderDetail() {
     ${extPctDisplay > 0 ? `<div class="detail-row"><span class="detail-label">Ekstern omsetning som gebyrberegnes</span><span class="detail-val">${fmt(extRev)}</span></div>` : ''}
     <div class="detail-total"><span>Totalt per måned</span><span>${fmt(c.total)}</span></div>
     <div style="margin-top:.25rem;text-align:right;font-size:12px;color:#5f5e5a">${fmt(c.total*12)} per år</div>
-    ${upgradeHtml}
+    ${extra}
     <div style="margin-top:1.25rem">
       <div style="font-size:11px;font-weight:500;color:#5f5e5a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem">Inkludert i ${p.name}</div>
       <div class="features-grid">${p.features.map(f=>`<div class="feature">${f}</div>`).join('')}</div>
@@ -259,13 +207,31 @@ window.selectPlan = function(idx) {
   renderDetail();
 };
 
+function validate() {
+  const rev = parseFloat(document.getElementById('rev').value);
+  const ext = parseFloat(document.getElementById('ext-pct').value);
+  let ok = true;
+  if (isNaN(rev) || rev < 0) {
+    document.getElementById('rev-error').style.display = 'block';
+    ok = false;
+  } else {
+    document.getElementById('rev-error').style.display = 'none';
+  }
+  if (isNaN(ext) || ext < 0 || ext > 100) {
+    document.getElementById('ext-error').style.display = 'block';
+    ok = false;
+  } else {
+    document.getElementById('ext-error').style.display = 'none';
+  }
+  return ok;
+}
+
 function calculate() {
-  currentRev    = parseInt(document.getElementById('rev').value);
+  if (!validate()) return;
+  currentRev    = parseFloat(document.getElementById('rev').value);
   currentAnnual = document.getElementById('billing').querySelector('.sel').dataset.val === 'annual';
-  currentExtPct = parseInt(document.getElementById('ext-pct').value) / 100;
-  recIdx = plans.findIndex(p => currentRev >= p.revMin && currentRev < p.revMax);
-  if (recIdx === -1) recIdx = plans.length - 1;
-  activeIdx = recIdx;
+  currentExtPct = parseFloat(document.getElementById('ext-pct').value) / 100;
+  activeIdx = 0;
   renderGrid();
   renderDetail();
   document.getElementById('result').classList.add('show');
